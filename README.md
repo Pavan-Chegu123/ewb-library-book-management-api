@@ -1,110 +1,36 @@
-# EWB Library Book Management API
+# 📚 Library Book Management API
 
-A beginner-friendly REST API for managing a library's books using **FastAPI**, **SQLAlchemy**, and **SQLite**.
+A RESTful API for managing library books, built using **Python, FastAPI, and SQLite**.
 
-## Features
+This project demonstrates CRUD operations (Create, Read, Update, and Delete), data validation, database integration, and automated testing.
 
-- Create a book
-- List all books
-- Search by title, author, or category
-- Filter by availability
-- Retrieve one book by ID
-- Update a book
-- Delete a book
-- Validate request data
-- Reject duplicate ISBN values
-- Return clear `404` and `409` errors
-- Automated API tests
+## ✨ Features
 
-## Requirements
+- Add new books to the library.
+- View all books.
+- Retrieve a book by its ID.
+- Update book details.
+- Delete books.
+- Search and filter books.
+- Validate book information.
+- Prevent duplicate ISBN numbers.
+- Store book records in an SQLite database.
+- Run automated tests using pytest.
 
-- Python 3.10 or newer
-- VS Code (recommended)
-- Git (for publishing to GitHub)
+## 🛠️ Technologies Used
 
-## Run locally
+- **Python** — Programming language.
+- **FastAPI** — Web API framework.
+- **SQLite** — Database.
+- **SQLAlchemy** — Database toolkit and ORM.
+- **Pydantic** — Data validation.
+- **Pytest** — Automated testing.
 
-Open a terminal in the project root (the folder containing `requirements.txt`).
-
-### Windows PowerShell
-
-```powershell
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-python -m uvicorn app.main:app --reload
-```
-
-If PowerShell blocks activation, use Command Prompt and run:
-
-```bat
-.venv\Scripts\activate.bat
-```
-
-Then install dependencies and start Uvicorn as above.
-
-### macOS / Linux
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-python -m uvicorn app.main:app --reload
-```
-
-Open these addresses in your browser:
-
-- API home: http://127.0.0.1:8000/
-- Health check: http://127.0.0.1:8000/health
-- Interactive API docs: http://127.0.0.1:8000/docs
-
-The `library.db` SQLite database is created automatically in the project root when the app starts.
-
-## Endpoints
-
-| Method | Path | Purpose |
-|---|---|---|
-| POST | `/books/` | Create a book |
-| GET | `/books/` | List books |
-| GET | `/books/{book_id}` | Read one book |
-| PUT | `/books/{book_id}` | Replace/update a book |
-| DELETE | `/books/{book_id}` | Delete a book |
-| GET | `/health` | Health check |
-
-Optional list filters:
-
-- `/books/?title=pragmatic`
-- `/books/?author=hunt`
-- `/books/?category=Programming`
-- `/books/?available=true`
-
-## Example JSON
-
-```json
-{
-  "title": "The Pragmatic Programmer",
-  "author": "Andrew Hunt",
-  "isbn": "9780135957059",
-  "publication_year": 2019,
-  "category": "Programming",
-  "available": true
-}
-```
-
-## Run tests
-
-With the virtual environment active:
-
-```bash
-python -m pytest -v
-```
-
-## Project structure
+## 📁 Project Structure
 
 ```text
 EWB_Library_Book_Management_API/
 ├── app/
-│   ├── __init__.py
 │   ├── main.py
 │   ├── database.py
 │   ├── models.py
@@ -118,6 +44,81 @@ EWB_Library_Book_Management_API/
 └── README.md
 ```
 
-## GitHub safety note
+## 🚀 Getting Started
 
-The `.gitignore` file prevents the local SQLite database and virtual environment from being added to Git. Do not commit passwords, API keys, personal data, or `.env` files.
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Pavan-Chegu123/ewb-library-book-management-api.git
+```
+
+### 2. Open the project folder
+
+```bash
+cd ewb-library-book-management-api
+```
+
+### 3. Create a virtual environment
+
+```bash
+python -m venv .venv
+```
+
+### 4. Activate the virtual environment
+
+**Windows PowerShell:**
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+### 5. Install dependencies
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 6. Start the API server
+
+```bash
+python -m uvicorn app.main:app --reload
+```
+
+### 7. Open the interactive API documentation
+
+Visit:
+
+http://127.0.0.1:8000/docs
+
+You can use this page to explore and test the API endpoints.
+
+## 🧪 Run Tests
+
+With the virtual environment activated, run:
+
+```bash
+python -m pytest -v
+```
+
+The project includes tests for API health, book CRUD operations, duplicate ISBN validation, and error handling.
+
+## 🎯 Learning Objectives
+
+This project demonstrates practical experience with:
+
+- Building REST APIs using FastAPI.
+- Working with databases.
+- Validating request data.
+- Handling API errors.
+- Writing automated tests.
+- Using Git and GitHub for version control.
+
+## 👩‍💻 Author
+
+**Pavan Chegu**
+
+GitHub: [Pavan-Chegu123](https://github.com/Pavan-Chegu123)
+
+---
+
+If you find this project useful, feel free to explore the code and learn from it.
